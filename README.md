@@ -1,6 +1,10 @@
+![](https://badgen.net/bundlephobia/minzip/pick-objects-using-id-index-array)
+![](https://badgen.net/bundlephobia/dependency-count/pick-objects-using-id-index-array)
+![](https://badgen.net/bundlephobia/tree-shaking/pick-objects-using-id-index-array)
+
 ### What
 
-Utility to sort an array of objects by a property using the values array.
+A tiny utility to sort an array of objects by a property using the values array.
 
 ### How
 

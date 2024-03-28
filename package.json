@@ -1,7 +1,7 @@
 {
   "name": "pick-objects-using-id-index-array",
   "version": "1.0.3",
-  "description": "",
+  "description": "A tiny utility to sort an array of objects by a property using the values array.",
   "type": "module",
   "source": "src/index.ts",
   "module": "dist/index.esm.js",
