@@ -4,6 +4,10 @@ Utility to sort an array of objects by a property using the values array.
 
 ### How
 
+```shell
+npm i pick-objects-using-id-index-array
+```
+
 ```typescript
 import { pickObjects } from 'pick-objects-using-id-index-array';
 
