@@ -1,6 +1,6 @@
 {
-  "name": "placeholder",
-  "version": "0.0.0",
+  "name": "pick-objects-using-id-index-array",
+  "version": "1.0.0",
   "description": "",
   "type": "module",
   "source": "src/index.ts",
@@ -22,9 +22,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Roman86/tanstack-table-deep-accessor-key-index.git"
+    "url": "https://github.com/Roman86/pick-objects-using-id-index-array.git"
   },
   "keywords": [
+    "objects",
+    "array",
+    "pick",
+    "id",
+    "map"
   ],
   "author": "Roman Kozodoi",
   "license": "ISC",
@@ -37,6 +42,5 @@
     "prettier": "^3.2.5",
     "prettier-plugin-multiline-arrays": "^3.0.4"
   },
-  "peerDependencies": {
-  }
+  "peerDependencies": {}
 }
