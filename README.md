@@ -4,7 +4,7 @@
 
 ### What
 
-A tiny utility to sort an array of objects by a property using the values array.
+A tiny type safe utility to sort an array of objects by a property using the values array.
 
 ### How
 
@@ -34,8 +34,12 @@ console.log(sorted);
 // output: [ { id: 3, title: 'Three' }, { id: 2, title: 'Two' }, { id: 1, title: 'One' } ]
 ```
 
-for nested or computed/complex ids - use a function as `idField` param - return the value that you use in your index array:
+### Nested or computed/complex ids
+For advanced cases `idField` param can be a function (receiving the object) - return the value that you use in your index array:
 
 ```typescript
 pickObjects([3,2,1], digits, (d) => d.id);
 ```
+
+### Type safe 😌
+`idField` must either exist in the object type (inferred from the `objects` array), `ids` array items must be of id field type
