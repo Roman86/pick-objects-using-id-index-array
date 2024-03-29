@@ -16,6 +16,7 @@ const extendsList = (isTs) =>
 
 export default {
   env: {
+    jest: true,
     browser: true,
     es2021: true,
   },
