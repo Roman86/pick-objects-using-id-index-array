@@ -41,5 +41,7 @@ For advanced cases `idField` param can be a function (receiving the object) - re
 pickObjects([3,2,1], digits, (d) => d.id);
 ```
 
+> 💡 missing items (whose ids weren't matched/found) will be ignored/skipped
+
 ### Type safe 😌
 `idField` must either exist in the object type (inferred from the `objects` array), `ids` array items must be of id field type
