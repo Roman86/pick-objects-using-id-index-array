@@ -23,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Roman86/pick-objects-using-id-index-array"
+    "url": "git+https://github.com/Roman86/pick-objects-using-id-index-array.git"
   },
   "keywords": [
     "objects",
