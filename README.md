@@ -4,7 +4,7 @@
 
 ### What
 
-A tiny type safe utility to sort an array of objects by a property using the values array.
+A tiny, type-safe utility to pick and order an array of objects based on a list of IDs.
 
 ### How
 
@@ -29,19 +29,49 @@ const digits: Digit[] = [
   { id: 5, title: 'Five' },
 ];
 
-const sorted = pickObjects([3,2,1], digits, 'id');
+const sorted = pickObjects([3, 2, 1], digits, 'id');
 console.log(sorted);
 // output: [ { id: 3, title: 'Three' }, { id: 2, title: 'Two' }, { id: 1, title: 'One' } ]
 ```
 
 ### Nested or computed/complex ids
-For advanced cases `idField` param can be a function (receiving the object) - return the value that you use in your index array:
+For advanced cases `idField` param can be a function that receives an object and returns the value to be used as an ID:
 
 ```typescript
-pickObjects([3,2,1], digits, (d) => d.id);
+pickObjects([3, 2, 1], digits, (d) => d.id);
 ```
 
-> 💡 missing items (whose ids weren't matched/found) will be ignored/skipped
+### Missing items
 
-### Type safe 😌
-`idField` must either exist in the object type (inferred from the `objects` array), `ids` array items must be of id field type
+Items from the `ids` array that are not found in the `objects` array will be ignored.
+
+```typescript
+const sorted = pickObjects([3, 99, 1], digits, 'id');
+console.log(sorted);
+// output: [ { id: 3, title: 'Three' }, { id: 1, title: 'One' } ]
+```
+
+### Duplicate items
+
+If the `objects` array contains multiple items with the same ID, the last one in the array will be used.
+
+```typescript
+const digitsWithDuplicates: Digit[] = [
+  { id: 1, title: 'One' },
+  { id: 2, title: 'Two' },
+  { id: 1, title: 'Uno' },
+];
+
+const sorted = pickObjects([1, 2], digitsWithDuplicates, 'id');
+console.log(sorted);
+// output: [ { id: 1, title: 'Uno' }, { id: 2, title: 'Two' } ]
+```
+
+### Performance
+
+This utility is designed for performance. It creates a `Map` from the `objects` array for quick lookups, resulting in a time complexity of O(N+M), where N is the number of objects and M is the number of IDs.
+
+### Type safety 😌
+The utility is type-safe:
+- `idField` must be a valid key of the objects in the `objects` array if it's a string.
+- The items in the `ids` array must match the type of the ID field in the objects.
